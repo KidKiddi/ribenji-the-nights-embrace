@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
+  - IsShadow
+  - Crosshair
   - 
   - whatIsGround
   - Post Processing

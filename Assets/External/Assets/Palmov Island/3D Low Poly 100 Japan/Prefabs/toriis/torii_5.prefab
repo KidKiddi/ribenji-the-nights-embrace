@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8914816882382037522}
   - component: {fileID: 1473781791706674709}
   - component: {fileID: 7978860959934479859}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7995593339712599398}
   - component: {fileID: 5265546403284550060}
   - component: {fileID: 5396289551644356176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: torii_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

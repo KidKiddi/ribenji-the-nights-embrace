@@ -14,6 +14,8 @@ public class TeleportationController : MonoBehaviour
 
     public GameObject particles;
     public GameObject tpMaxRangeIndicator;
+    public GameObject crosshair;
+    private Material crosshairMat;
 
     private Vector3 teleportTarget; // Target position for teleportation
     private bool isTeleporting; // Flag indicating if the player is currently teleporting
@@ -30,19 +32,20 @@ public class TeleportationController : MonoBehaviour
         oldFOV = cam.fieldOfView;
         particles.SetActive(false);
         tpMaxRangeIndicator.SetActive(false);
+        crosshairMat = crosshair.GetComponent<Renderer>().sharedMaterial;
     }
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.Mouse1) && !isTeleporting)
         {
-            Debug.Log("KeyDown");
             tpMaxRangeIndicator.SetActive(true);
             RaycastHit hit;
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, teleportRange, teleportLayer))
             {
                 canTeleport = true;
                 teleportPosition = hit.point + playerOffset;
+                crosshairMat.SetFloat("_Index", 0.0f);
 
                 // Calculate the angle between the surface normal and the up direction
                 float angle = Vector3.Angle(hit.normal, Vector3.up);
@@ -69,6 +72,7 @@ public class TeleportationController : MonoBehaviour
                         {
                             //Debug.Log("TopTP");
                             teleportPosition = wallTopHit.point + playerOffset;
+                            crosshairMat.SetFloat("_Index", 4.0f);
                         }
                     }
                 }
@@ -79,16 +83,20 @@ public class TeleportationController : MonoBehaviour
             {
                 canTeleport = false;
                 particles.SetActive(false);
+                crosshairMat.SetFloat("_Index", 1.0f);
             }
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
             tpMaxRangeIndicator.SetActive(false);
+            crosshairMat.SetFloat("_Index", 0.0f);
+        }
 
         if (Input.GetKeyUp(KeyCode.Mouse1) && canTeleport && !isTeleporting)
         {
+            crosshairMat.SetFloat("_Index", 0.0f);
             particles.SetActive(false);
-            Debug.Log("KeyUp");
             // Start the teleportation transition
             oldPos = transform.position;
             isTeleporting = true;
