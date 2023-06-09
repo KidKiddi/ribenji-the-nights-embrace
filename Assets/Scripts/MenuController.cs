@@ -19,6 +19,8 @@ public class MenuController : MonoBehaviour
     void Start()
     {
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         settingsMenu.SetActive(false);
         volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString() + "%";
     }
