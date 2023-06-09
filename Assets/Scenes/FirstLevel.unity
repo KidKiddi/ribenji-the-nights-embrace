@@ -2787,7 +2787,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 170, y: 170}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686324022
 MonoBehaviour:
@@ -4692,14 +4692,14 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 500
   field of view: 90
   orthographic: 1
-  orthographic size: 113.94
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 7423
+    m_Bits: 6015
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 8ef682741350ba84fa43a11793ac7926, type: 2}
   m_TargetDisplay: 0
@@ -4718,14 +4718,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060646611}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 99.7, z: -9}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 26.5, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
 --- !u!114 &1060646616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4739,6 +4739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 376886197}
+  cameraHeight: 5
 --- !u!1 &1071480193
 GameObject:
   m_ObjectHideFlags: 0
@@ -6343,6 +6344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsMenu: {fileID: 2053547250}
+  minimap: {fileID: 1808845320}
   volumeText: {fileID: 1897819930}
 --- !u!1001 &1445793688
 PrefabInstance:
@@ -12985,8 +12987,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -105.79996, y: -103.3}
-  m_SizeDelta: {x: 178, y: 178}
+  m_AnchoredPosition: {x: -82.2, y: -80.7}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808845322
 MonoBehaviour:
