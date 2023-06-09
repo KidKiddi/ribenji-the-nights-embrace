@@ -1,21 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
+using TMPro;
 
 public class MenuController : MonoBehaviour
 {
     public GameObject settingsMenu;
-    public Slider volumeSlider;
-    public AudioSource audioSource;
 
     private bool isPaused = false;
 
+    public TMP_Text volumeText;
+
+
     void Start()
     {
+
         settingsMenu.SetActive(false);
+        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString();
     }
 
     void Update()
@@ -67,8 +72,16 @@ public class MenuController : MonoBehaviour
 
     }
 
-    public void ChangeVolume()
+    public void IncrementAudio()
     {
-        audioSource.volume = volumeSlider.value;
+        AudioListener.volume = Math.Min(1f, AudioListener.volume + 0.1f);
+        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString();
+
+    }
+
+    public void DecrementAudio()
+    {
+        AudioListener.volume = Math.Max(0f, AudioListener.volume - 0.1f);
+        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString();
     }
 }
