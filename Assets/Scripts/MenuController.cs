@@ -20,7 +20,7 @@ public class MenuController : MonoBehaviour
     {
 
         settingsMenu.SetActive(false);
-        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString();
+        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString() + "%";
     }
 
     void Update()
@@ -75,13 +75,13 @@ public class MenuController : MonoBehaviour
     public void IncrementAudio()
     {
         AudioListener.volume = Math.Min(1f, AudioListener.volume + 0.1f);
-        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString();
+        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString() + "%";
 
     }
 
     public void DecrementAudio()
     {
         AudioListener.volume = Math.Max(0f, AudioListener.volume - 0.1f);
-        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString();
+        volumeText.text = Mathf.RoundToInt(AudioListener.volume * 100).ToString() + "%";
     }
 }
