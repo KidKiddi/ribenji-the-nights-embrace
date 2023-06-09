@@ -11,6 +11,8 @@ public class MenuController : MonoBehaviour
 {
     public GameObject settingsMenu;
 
+    public GameObject minimap;
+
     private bool isPaused = false;
 
     public TMP_Text volumeText;
@@ -43,6 +45,7 @@ public class MenuController : MonoBehaviour
     public void Resume()
     {
         settingsMenu.SetActive(false);
+        minimap.SetActive(true);
         isPaused = false;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
@@ -58,6 +61,7 @@ public class MenuController : MonoBehaviour
     public void Pause()
     {
         settingsMenu.SetActive(true);
+        minimap.SetActive(false);
         isPaused = true;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
