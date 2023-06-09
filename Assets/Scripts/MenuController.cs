@@ -20,9 +20,9 @@ public class MenuController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isPaused)
+            if (isPaused)
             {
                 Resume();
             }
@@ -42,6 +42,12 @@ public class MenuController : MonoBehaviour
         Cursor.visible = false;
     }
 
+    public void Reset()
+    {
+        Resume();
+        SceneManager.LoadScene("FirstLevel");
+    }
+
     public void Pause()
     {
         settingsMenu.SetActive(true);
@@ -53,7 +59,12 @@ public class MenuController : MonoBehaviour
 
     public void Exit()
     {
+    #if UNITY_EDITOR
+         UnityEditor.EditorApplication.isPlaying = false;
+    #else
         UnityEngine.Application.Quit();
+    #endif
+
     }
 
     public void ChangeVolume()
