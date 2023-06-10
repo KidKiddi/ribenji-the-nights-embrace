@@ -38,6 +38,10 @@ public class PlayerInteraction : MonoBehaviour
         {
             levelStateController.ShowGameOverScreen();
         }
+        else if (other.gameObject.CompareTag("Win"))
+        {
+            levelStateController.ShowWonScreen();
+        }
 
     }
 
