@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 interface IInteractable
@@ -27,4 +29,15 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        UnityEngine.Debug.Log("Collision");
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            UnityEngine.Debug.Log("Collision");
+        }
+
+    }
+
 }
