@@ -15,6 +15,8 @@ public class PlayerInteraction : MonoBehaviour
     public float activationDistance;
     bool active;
 
+    public LevelStateController levelStateController;
+
     // Update is called once per frame
     void Update()
     {
@@ -32,10 +34,9 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        UnityEngine.Debug.Log("Collision");
         if (other.gameObject.CompareTag("Enemy"))
         {
-            UnityEngine.Debug.Log("Collision");
+            levelStateController.ShowGameOverScreen();
         }
 
     }
