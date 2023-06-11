@@ -7,6 +7,7 @@ public class TeleportationController : MonoBehaviour
     public Camera cam; // Reference to the player's camera
     public float teleportRange; // Maximum teleport range
     public LayerMask teleportLayer; // Layer mask for teleportable surfaces
+    public LayerMask cantTeleportLayer; // Layher mask to stop teleport
     public float groundAngleThreshold; // Angle threshold for considering the ground
     public float wallTopThreshold; // Distance threshold to check for a flat surface above the wall
     public float teleportOffset; // Offset to prevent teleporting inside walls or ceilings
@@ -53,7 +54,7 @@ public class TeleportationController : MonoBehaviour
         {
             tpMaxRangeIndicator.SetActive(true);
             //RaycastHit hit;
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, teleportRange, teleportLayer) && IsTargetInShadow(hit.point + hit.normal))
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, teleportRange, teleportLayer) && IsTargetInShadow(hit.point + hit.normal) && !Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit shouldntHit, teleportRange, cantTeleportLayer))
             {
                 canTeleport = true;
                 teleportPosition = hit.point + playerOffset;

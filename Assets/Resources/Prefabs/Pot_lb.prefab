@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1362099208593229497}
   - component: {fileID: 3820127027367424627}
   - component: {fileID: 2413761703401188235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pot_lb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
