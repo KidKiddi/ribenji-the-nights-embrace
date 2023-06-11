@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log((int)(1.0f / Time.smoothDeltaTime));
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
