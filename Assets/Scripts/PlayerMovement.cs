@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         air
     }
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -126,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.crouching;
             moveSpeed = crouchSpeed;
+            SetChaseRadius(10);
         }
 
         // Mode - Sprinting
@@ -133,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
+            SetChaseRadius(20);
         }
 
         // Mode - Walking
@@ -140,15 +143,24 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
+            SetChaseRadius(20);
         }
 
         // Mode - Air
         else
         {
             state = MovementState.air;
+            SetChaseRadius(20);
         }
     }
-
+    void SetChaseRadius(int val)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<EnemyMovement>().SetChaseRadius(val);
+        }
+    }
     private void MovePlayer()
     {
         // calculate movement direction

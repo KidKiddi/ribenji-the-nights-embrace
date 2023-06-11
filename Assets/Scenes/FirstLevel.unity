@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1123797393}
-  m_IndirectSpecularColor: {r: 0.0061597745, g: 0.04097059, b: 0.09964527, a: 1}
+  m_IndirectSpecularColor: {r: 0.006159822, g: 0.040970556, b: 0.099645026, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3922,6 +3922,9 @@ MonoBehaviour:
   teleportLayer:
     serializedVersion: 2
     m_Bits: 1152
+  cantTeleportLayer:
+    serializedVersion: 2
+    m_Bits: 0
   groundAngleThreshold: 50
   wallTopThreshold: 3
   teleportOffset: 1
@@ -8929,7 +8932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030584068363554971, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
@@ -12727,7 +12730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030584068363554971, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
@@ -12825,7 +12828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030584068363554971, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
@@ -23213,7 +23216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030584068363554971, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}

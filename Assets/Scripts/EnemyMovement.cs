@@ -10,13 +10,14 @@ public class EnemyMovement : MonoBehaviour
 
     public UnityEngine.AI.NavMeshAgent agent;
     public Transform playerTransform;
-    public float chaseRadius;
+    public float chaseRadius = 20;
     public List<Transform> waypoints;
     private int currentWaypointIndex = 0;
     private bool chasingPlayer = false;
     // Start is called before the first frame update
     void Start()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -41,4 +42,12 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
+
+
+
+    public void SetChaseRadius(int val)
+    {
+        chaseRadius = val;
+    }
+
 }
