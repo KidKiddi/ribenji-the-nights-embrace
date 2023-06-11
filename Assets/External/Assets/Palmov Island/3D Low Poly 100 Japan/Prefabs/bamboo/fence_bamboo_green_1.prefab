@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6007310971065223084}
   - component: {fileID: 8411236232494232422}
   - component: {fileID: -2491466249520780051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fence_bamboo_green_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
