@@ -34,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Deathbox"))
         {
             levelStateController.ShowGameOverScreen();
         }
@@ -44,5 +44,18 @@ public class PlayerInteraction : MonoBehaviour
         }
 
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Deathbox"))
+        {
+            levelStateController.ShowGameOverScreen();
+        }
+        else if (other.gameObject.CompareTag("Win"))
+        {
+            levelStateController.ShowWonScreen();
+        }
+
+    }
+
 
 }
