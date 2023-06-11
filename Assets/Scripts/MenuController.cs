@@ -21,6 +21,7 @@ public class MenuController : MonoBehaviour
     void Start()
     {
 
+        minimap.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         settingsMenu.SetActive(false);
