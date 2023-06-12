@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using static System.Net.Mime.MediaTypeNames;
+using TMPro;
 public class LevelStateController : MonoBehaviour
 {
     public GameObject levelState;
     public GameObject gameOverElement;
     public GameObject wonTextElement;
 
-    // Start is called before the first frame update
     void Start()
     {
         levelState.SetActive(false);
-        
     }
 
     public void ShowGameOverScreen()
@@ -34,4 +33,6 @@ public class LevelStateController : MonoBehaviour
         gameOverElement.SetActive(false);
         wonTextElement.SetActive(true);
     }
+
+   
 }
