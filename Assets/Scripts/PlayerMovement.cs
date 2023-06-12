@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")]
     public float playerHeight;
+    private float originalPlayerHeight;
     public LayerMask whatIsGround;
     bool grounded;
 
@@ -65,12 +66,19 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
 
         startYScale = transform.localScale.y;
+
+        originalPlayerHeight = playerHeight;
     }
 
     private void Update()
     {
-        Debug.Log((int)(1.0f / Time.smoothDeltaTime));
+        //Debug.Log((int)(1.0f / Time.smoothDeltaTime));
         // ground check
+        if (state == MovementState.crouching)
+            playerHeight = originalPlayerHeight * 0.5f;
+        else
+            playerHeight = originalPlayerHeight;
+
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
         MyInput();
@@ -110,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            rb.AddForce(Vector3.down * 10f, ForceMode.Impulse);
         }
 
         // stop crouch
