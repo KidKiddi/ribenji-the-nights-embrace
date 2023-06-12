@@ -16,8 +16,6 @@ public class TeleportationController : MonoBehaviour
     public Camera cam; // Reference to the player's camera
     public GameObject tpParticleIndicator; // Teleport indicator
     public GameObject tpMaxRangeIndicator; // Max range indicator
-    public GameObject crosshair; // Public crosshair reference
-    private Material crosshairMat; // Material to change crosshair
 
     [Header("Light")]
     public Light mainDirLight;
@@ -26,6 +24,11 @@ public class TeleportationController : MonoBehaviour
     [Header("Layers")]
     public LayerMask teleportLayer; // Layer mask for teleportable surfaces
     public LayerMask cantTeleportLayer; // Layher mask to stop teleport
+
+    [Header("Crosshair")]
+    public GameObject crosshair_main;
+    public GameObject crosshair_cant;
+    public GameObject crosshair_up;
 
     private Vector3 teleportTarget; // Target position for teleportation
     private bool isTeleporting; // Flag indicating if the player is currently teleporting
@@ -42,7 +45,6 @@ public class TeleportationController : MonoBehaviour
         oldFOV = cam.fieldOfView;
         tpParticleIndicator.SetActive(false);
         tpMaxRangeIndicator.SetActive(false);
-        crosshairMat = crosshair.GetComponent<Renderer>().sharedMaterial;
         playerOffset = new Vector3(0, playerSize, 0);
 
         // Get all point lights in the scene
@@ -54,6 +56,8 @@ public class TeleportationController : MonoBehaviour
             }
         }
         Debug.Log("There are " + pointLights.Count + " point lights in the scene.");
+
+        swapCrosshair(0);
     }
 
     private void Update()
@@ -79,7 +83,7 @@ public class TeleportationController : MonoBehaviour
             {
                 canTeleport = true;
                 teleportPosition = hit.point + playerOffset;
-                crosshairMat.SetFloat("_Index", 0.0f);
+                swapCrosshair(0);
 
                 // Calculate the angle between the surface normal and the up direction
                 float angle = Vector3.Angle(hit.normal, Vector3.up);
@@ -103,7 +107,7 @@ public class TeleportationController : MonoBehaviour
                         if (wallTopDistance <= wallTopThreshold && topAngle <= 40)
                         {
                             teleportPosition = wallTopHit.point + playerOffset;
-                            crosshairMat.SetFloat("_Index", 4.0f);
+                            swapCrosshair(2);
                         }
                     }
                 }
@@ -114,19 +118,19 @@ public class TeleportationController : MonoBehaviour
             {
                 canTeleport = false;
                 tpParticleIndicator.SetActive(false);
-                crosshairMat.SetFloat("_Index", 1.0f);
+                swapCrosshair(1);
             }
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             tpMaxRangeIndicator.SetActive(false);
-            crosshairMat.SetFloat("_Index", 0.0f);
+            swapCrosshair(0);
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse1) && canTeleport && !isTeleporting)
         {
-            crosshairMat.SetFloat("_Index", 0.0f);
+            swapCrosshair(0);
             tpParticleIndicator.SetActive(false);
             // Start the teleportation transition
             oldPos = transform.position;
@@ -173,6 +177,29 @@ public class TeleportationController : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void swapCrosshair(int index)
+    {
+        switch (index) {
+            case 0:
+                crosshair_main.SetActive(true);
+                crosshair_cant.SetActive(false);
+                crosshair_up.SetActive(false);
+                break;
+            case 1:
+                crosshair_main.SetActive(false);
+                crosshair_cant.SetActive(true);
+                crosshair_up.SetActive(false);
+                break;
+            case 2:
+                crosshair_main.SetActive(false);
+                crosshair_cant.SetActive(false);
+                crosshair_up.SetActive(true);
+                break;
+            default:
+                break;
+        }
     }
 }
 
