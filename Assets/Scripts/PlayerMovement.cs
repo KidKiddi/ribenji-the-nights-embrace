@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private KeywordRecognizer keywordRecognizer;
-    private Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
+    private Dictionary<string, System.Action> actions;
 
 
     private void Start()
@@ -73,11 +73,23 @@ public class PlayerMovement : MonoBehaviour
         startYScale = transform.localScale.y;
 
         originalPlayerHeight = playerHeight;
-        actions.Add("jump", Jump); 
-        keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
-        keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
-        keywordRecognizer.Start();
+        if(actions == null) {
+            actions = new Dictionary<string, System.Action>();
+            actions.Add("jump", Jump);
+        } 
+        if(keywordRecognizer == null) {
+            keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
+            keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
+            keywordRecognizer.Start();
+        }
     }
+
+    private void OnDestroy() 
+{
+    keywordRecognizer.OnPhraseRecognized -= RecognizedSpeech;
+    keywordRecognizer.Stop();
+    keywordRecognizer.Dispose();
+}
 
      private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
     {

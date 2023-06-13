@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+using TMPro;
 interface IInteractable
 {
     public void Interact();
@@ -22,10 +22,16 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject crosshair_cant;
     public GameObject crosshair_up;
 
+    private static int counter = 0;
+    
+    public int collectPoster = 2;
+    public TMP_Text counterText;
+
     private void Start()
     {
         pgPsTotal = GameObject.FindGameObjectsWithTag("PropagandaPoster").Length;
         Debug.Log("There are " + pgPsTotal + " Propaganda Posters.");
+        counter = 0;
     }
 
     // Update is called once per frame
@@ -36,6 +42,8 @@ public class PlayerInteraction : MonoBehaviour
             interactionText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
+                counter++;
+                counterText.text = counter + "/20";
                 interactObj.Interact();
                 pgPsFound++;
             }
@@ -51,7 +59,7 @@ public class PlayerInteraction : MonoBehaviour
             disableCrosshair();
             levelStateController.ShowGameOverScreen();
         }
-        else if (other.gameObject.CompareTag("Win"))
+        else if (other.gameObject.CompareTag("Win") && counter >= collectPoster)
         {
             disableCrosshair();
             levelStateController.ShowWonScreen();
@@ -65,7 +73,7 @@ public class PlayerInteraction : MonoBehaviour
             disableCrosshair();
             levelStateController.ShowGameOverScreen();
         }
-        else if (other.gameObject.CompareTag("Win"))
+        else if (other.gameObject.CompareTag("Win") && counter >= collectPoster)
         {
             disableCrosshair();
             levelStateController.ShowWonScreen();
