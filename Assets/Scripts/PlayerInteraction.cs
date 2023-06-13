@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System;
+
 interface IInteractable
 {
     public void Interact();
@@ -27,6 +29,7 @@ public class PlayerInteraction : MonoBehaviour
     public int collectPoster = 2;
     public TMP_Text counterText;
 
+    public AudioSource audioSource;
     private void Start()
     {
         pgPsTotal = GameObject.FindGameObjectsWithTag("PropagandaPoster").Length;
@@ -45,10 +48,20 @@ public class PlayerInteraction : MonoBehaviour
                 counterText.text = counter + "/20";
                 interactObj.Interact();
                 pgPsFound++;
+                PlaySound();
             }
         }
         else
             interactionText.SetActive(false);
+    }
+
+    private void PlaySound()
+    {
+        if(audioSource != null) {
+            audioSource.time = 1f;
+            audioSource.Play();
+        }
+               
     }
 
     private void OnTriggerEnter(Collider other)
