@@ -55,7 +55,6 @@ public class TeleportationController : MonoBehaviour
                 pointLights.Add(light);
             }
         }
-        Debug.Log("There are " + pointLights.Count + " point lights in the scene.");
 
         swapCrosshair(0);
     }

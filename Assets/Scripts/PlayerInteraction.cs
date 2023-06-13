@@ -30,7 +30,6 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         pgPsTotal = GameObject.FindGameObjectsWithTag("PropagandaPoster").Length;
-        Debug.Log("There are " + pgPsTotal + " Propaganda Posters.");
         counter = 0;
     }
 
