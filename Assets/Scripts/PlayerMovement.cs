@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
+using System.Linq;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -57,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
         air
     }
 
+    private KeywordRecognizer keywordRecognizer;
+    private Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
+
 
     private void Start()
     {
@@ -68,6 +73,15 @@ public class PlayerMovement : MonoBehaviour
         startYScale = transform.localScale.y;
 
         originalPlayerHeight = playerHeight;
+        actions.Add("jump", Jump); 
+        keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
+        keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
+        keywordRecognizer.Start();
+    }
+
+     private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
+    {
+        actions[speech.text].Invoke();
     }
 
     private void Update()
