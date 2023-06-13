@@ -2002,21 +2002,21 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4364827864768369092}
   - {fileID: 784057186}
   - {fileID: 507272076}
   - {fileID: 916712305}
   - {fileID: 1001585801}
   - {fileID: 143331699}
   - {fileID: 1190860993}
-  - {fileID: 4364827864768369092}
   - {fileID: 531340387}
   - {fileID: 2070067}
   - {fileID: 1375953909}
   - {fileID: 566427990}
   - {fileID: 2008037840}
   - {fileID: 269066059}
-  - {fileID: 1171539731}
   - {fileID: 1324459025}
+  - {fileID: 1171539731}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8562,8 +8562,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6ce32006fa095de46a8058d96d0fb37d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.454
+  m_Pitch: 0.7
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -9979,9 +9979,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50879715}
     m_Modifications:
+    - target: {fileID: 5996644815198293835, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 376886197}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalScale.x
@@ -18915,9 +18919,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50879715}
     m_Modifications:
+    - target: {fileID: 5996644815198293835, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 376886197}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalScale.x
@@ -19753,9 +19761,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50879715}
     m_Modifications:
+    - target: {fileID: 5996644815198293835, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 376886197}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalScale.x
@@ -23913,7 +23925,7 @@ Transform:
   - {fileID: 1196355053}
   - {fileID: 138715065}
   m_Father: {fileID: 50879715}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1330928092
 PrefabInstance:
@@ -27526,9 +27538,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50879715}
     m_Modifications:
+    - target: {fileID: 5996644815198293835, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 376886197}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalScale.x
@@ -27682,9 +27698,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50879715}
     m_Modifications:
+    - target: {fileID: 5996644815198293835, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 376886197}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36794,7 +36814,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalScale.x
@@ -43529,7 +43549,7 @@ Transform:
   - {fileID: 1923926554}
   - {fileID: 1677017921}
   m_Father: {fileID: 50879715}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5843526619139113763
 PrefabInstance:
@@ -43700,9 +43720,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50879715}
     m_Modifications:
+    - target: {fileID: 5996644815198293835, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 376886197}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalScale.x
@@ -43755,6 +43779,10 @@ PrefabInstance:
     - target: {fileID: 6506450397237828370, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383424363503047235, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8383424363503047260, guid: ac5e89e6be6aa5c4788ffe69b7a688fa, type: 3}
       propertyPath: chaseRadius
