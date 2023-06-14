@@ -9791,7 +9791,7 @@ MonoBehaviour:
   crosshair_main: {fileID: 344828545}
   crosshair_cant: {fileID: 1984962639}
   crosshair_up: {fileID: 1581409926}
-  collectPoster: 20
+  collectPoster: 21
   counterText: {fileID: 1212668050}
   audioSource: {fileID: 376886203}
 --- !u!136 &376886202
@@ -24495,7 +24495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0/20
+  m_text: 0/21
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 51a332e4b1311a44faaa0a1099c97910, type: 2}
   m_sharedMaterial: {fileID: 5347781199254732169, guid: 51a332e4b1311a44faaa0a1099c97910, type: 2}

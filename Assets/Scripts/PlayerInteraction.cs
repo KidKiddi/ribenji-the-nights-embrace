@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private static int counter = 0;
     
-    public int collectPoster = 2;
+    public int collectPoster = 21;
     public TMP_Text counterText;
 
     public AudioSource audioSource;
@@ -45,7 +45,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 counter++;
-                counterText.text = counter + "/20";
+                counterText.text = counter + "/" + collectPoster;
                 interactObj.Interact();
                 pgPsFound++;
                 PlaySound();
